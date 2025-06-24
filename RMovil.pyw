@@ -222,7 +222,7 @@ class Contratista:
                     self.Estado.set("")
                     self.Conclusion.set("")
                     self.Estadofinal.set("")
-                    self.Nombre.focus() # Suponiendo que tienes un Entry con nombre self.Codigo_Entry
+                    #self.Nombre.focus() # Suponiendo que tienes un Entry con nombre self.Codigo_Entry
 
             except:
                 messagebox.showinfo("Error","No se ha encontrado que Limpiar")
@@ -628,32 +628,29 @@ class Contratista:
         # Subir los botones justo debajo de las cajas de texto, más anchos y más hacia arriba
         for i in range(7):
             Frame1.grid_columnconfigure(i, weight=1)
-        btn_width = 180  # Más ancho
+        btn_width = 80  # Más ancho
         btn_height = 36
 
         # Cargar imágenes (ajusta las rutas a tus archivos de imagen)
-        img_nuevo = Ctk.CTkImage(light_image=Image.open("./img/datos.png"), dark_image=Image.open("./img/datos.png"), size=(24,24))
-        img_guardar = Ctk.CTkImage(light_image=Image.open("./img/guardar2.png"), dark_image=Image.open("./img/datos.png"), size=(24,24))
-        img_actualizar = Ctk.CTkImage(light_image=Image.open("./img/datos.png"), dark_image=Image.open("./img/datos.png"), size=(24,24))
+        img_nuevo = Ctk.CTkImage(light_image=Image.open("./img/nuevo.png"), dark_image=Image.open("./img/nuevo.png"), size=(24,24))
+        img_guardar = Ctk.CTkImage(light_image=Image.open("./img/guardar2.png"), dark_image=Image.open("./img/guardar2.png"), size=(24,24))
+        img_actualizar = Ctk.CTkImage(light_image=Image.open("./img/editar.png"), dark_image=Image.open("./img/datos.png"), size=(24,24))
         img_monitor = Ctk.CTkImage(light_image=Image.open("./img/datos.png"), dark_image=Image.open("./img/datos.png"), size=(24,24))
         img_limpiar = Ctk.CTkImage(light_image=Image.open("./img/datos.png"), dark_image=Image.open("./img/datos.png"), size=(24,24))
         img_certificado = Ctk.CTkImage(light_image=Image.open("./img/datos.png"), dark_image=Image.open("./img/datos.png"), size=(24,24))
         img_excel = Ctk.CTkImage(light_image=Image.open("./img/datos.png"), dark_image=Image.open("./img/datos.png"), size=(24,24))
        # Botones con imágenes
-        btn1 = Ctk.CTkButton(Frame1, fg_color="teal", text="Nuevo", width=btn_width, height=btn_height, image=img_nuevo, compound="left")
+        btn1 = Ctk.CTkButton(Frame1, fg_color="teal", text="Nuevo", width=btn_width, height=btn_height, image=img_nuevo, compound="left", command=funNuevo)
         btn1.grid(row=4, column=0, padx=10, pady=(10, 2), sticky="ew", columnspan=1)
-        btn2 = Ctk.CTkButton(Frame1, fg_color="teal", text="Guardar", width=btn_width, height=btn_height, image=img_guardar, compound="left")
+        btn2 = Ctk.CTkButton(Frame1, fg_color="teal", text="Guardar", width=btn_width, height=btn_height, image=img_guardar, compound="left", command=Func_Guardar)
         btn2.grid(row=4, column=1, padx=10, pady=(10, 2), sticky="ew", columnspan=1)
-        btn3 = Ctk.CTkButton(Frame1, fg_color="teal", text="Actualizar", width=btn_width, height=btn_height, image=img_actualizar, compound="left")
+        btn3 = Ctk.CTkButton(Frame1, fg_color="teal", text="Actualizar", width=btn_width, height=btn_height, image=img_actualizar, compound="left", command=Func_Actualizar)
         btn3.grid(row=4, column=2, padx=10, pady=(10, 2), sticky="ew", columnspan=1)
         btn4 = Ctk.CTkButton(Frame1, fg_color="teal", text="Monitor", width=btn_width, height=btn_height, command=CargarData, image=img_monitor, compound="left")
         btn4.grid(row=4, column=3, padx=10, pady=(10, 2), sticky="ew", columnspan=1)
         btn5 = Ctk.CTkButton(Frame1, fg_color="teal", text="Limpiar", width=btn_width, height=btn_height, command=flimpiar, image=img_limpiar, compound="left")
         btn5.grid(row=4, column=4, padx=10, pady=(10, 2), sticky="ew", columnspan=1)
-        btn6 = Ctk.CTkButton(Frame1, fg_color="teal", text="expide tu certificado", width=btn_width, height=btn_height, image=img_certificado, compound="left")
-        btn6.grid(row=4, column=5, padx=10, pady=(10, 2), sticky="ew", columnspan=1)
-        btn7 = Ctk.CTkButton(Frame1, fg_color="teal", text="Importar Excel", width=btn_width, height=btn_height, image=img_excel, compound="left")
-        btn7.grid(row=4, column=6, padx=10, pady=(10, 2), sticky="ew", columnspan=1)
+
 
 # ...existing code...
                 # ... después de los botones principales y antes de Frame2.pack() ...
